@@ -1,0 +1,14 @@
+syntax = "proto3";
+option java_generic_services = true;
+package com.senti.grpc.server.vaccinationservice.schema;
+message VaccinationRequest {
+    string id = 1;
+}
+
+message VaccinationResponse {
+    bool vaccination_ready = 1;
+}
+
+service VaccinationService {
+    rpc checkIfReady(VaccinationRequest) returns (VaccinationResponse);
+}
